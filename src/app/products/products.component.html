@@ -1,0 +1,47 @@
+<p>products works!</p>
+
+
+<div class="row">
+<div class="col-sm-12">
+<div class="table-responsive" style="height: 300px;">
+    <div>sdsd</div>
+    {{post}}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Availabililty</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of this.posts;">
+                <td><img src="{{post.productImage}}" height=80 /></td>
+                <td><a routerLink="{{post.productId}}" >{{post.product}}</a></td>
+                <td>{{post | json}}</td>
+                <td>{{post.available}}</td>
+                <td>{{post.price}}</td>
+                <td>
+                    
+                    <!-- <div class="" *ngFor="let key of post.rating | loopNumber">
+                        <i class="fa fa-star" aria-hidden="true"></i> {{key}} 
+                    </div>
+                         -->
+                        <!-- <i class="fa fa-star-half" aria-hidden="true"></i> -->
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+
+
+
+<div class="conatiner">
+    <router-outlet></router-outlet>
+  </div>
